@@ -13,7 +13,8 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" style="height:400px" src="/menu/{{ $menu->gambar_menu }}" alt="..." />
+                            <img class="card-img-top" style="height:400px" src="/menu/{{ $menu->gambar_menu }}"
+                                alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -22,16 +23,18 @@
                                     <!-- Product price-->
                                     Rp {{ $menu->harga_menu }}
                                 </div>
-                                <!-- Input Quantity-->
-                                <div class="input-group mt-3">
-                                    <input type="number" min="0" class="form-control" placeholder="Quantity"
-                                        aria-label="Quantity" aria-describedby="quantity-addon">
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-danger btn-outline mt-auto text-white"
-                                        href="#">Add to cart</a></div>
+
+                                <form action="{{ url('add_cart', $menu->id) }}" method="POST">
+                                    @csrf
+                                    <!-- Input Quantity-->
+                                    <div class="input-group mt-3">
+                                        <input type="number" min="0" class="form-control" id="quantity" name="quantity" placeholder="Quantity">
+                                    </div>
+                                    <!-- Product actions-->
+                                    <div class="text-center mt-3">
+                                        <input type="submit" class="btn btn-danger btn-outline mt-auto text-white" value="Add to Cart">
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
