@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('content')
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Menu Table</h1>
+        <h1 class="mt-4">Menu</h1>
 
         {{-- start add menu --}}
         <div class="card mb-4">
@@ -36,6 +36,7 @@
                     <button type="submit" class="btn btn-primary ms-2 mt-1">Submit</button>
                 </form>
             </div>
+            <hr>
             <div class="card-body">
                 <table id="datatablesSimple">
                     <thead>

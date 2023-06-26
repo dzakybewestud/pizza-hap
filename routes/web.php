@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DriverController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Menu;
@@ -32,23 +33,32 @@ Route::post('/edit_menu_confirm/{id_menu}', [AdminController::class, 'edit_menu_
 
 // ADMIN USER START
 Route::get('/admin-user', [AdminController::class, 'view_adminUser'])->middleware('admin');
+Route::get('/edit_user/{id}', [AdminController::class, 'edit_user'])->middleware('admin');
+Route::post('/edit_user_confirm/{id}', [AdminController::class, 'edit_user_confirm'])->middleware('admin');
 Route::get('/delete_user/{id}', [AdminController::class, 'delete_user'])->middleware('admin');
 // ADMIN USER END
 
 // ADMIN USER START
 Route::get('/admin-driver', [AdminController::class, 'view_adminDriver'])->middleware('admin');
 Route::post('/add_driver', [AdminController::class, 'add_driver'])->middleware('admin'); //menggunakan POST karena form yang digunakan memiliki metode post.
+Route::get('/edit_driver/{id}', [AdminController::class, 'edit_driver'])->middleware('admin');
 Route::get('/delete_driver/{id}', [AdminController::class, 'delete_driver'])->middleware('admin');
 // ADMIN USER END
 
 
+// Admin Order Start
+Route::get('/admin-order', [AdminController::class, 'view_adminOrder'])->middleware('admin');
+
 Route::post('/add_cart/{id}', [HomeController::class, 'add_cart'])->middleware('auth');
 Route::get('/show_cart', [HomeController::class, 'show_cart'])->middleware('auth');
 Route::get('/delete_cart/{id}', [HomeController::class, 'delete_cart'])->middleware('auth');
+Route::get('/checkout_cart', [HomeController::class, 'checkout_cart'])->middleware('auth');
+Route::get('/show_orders', [HomeController::class, 'show_orders'])->middleware('auth');
 
 
-
-Route::view('/driver-home', 'homeDriver');
+Route::get('/diantar/{nama_user}/{delivery_status}', [HomeController::class, 'driver_home'])->middleware('driver');
+Route::get('/selesai/{nama_user}/{delivery_status}', [HomeController::class, 'driver_home'])->middleware('driver');
+Route::get('/status/{nama_user}', [DriverController::class, 'status'])->middleware('driver');
 
 Route::middleware([
     'auth:sanctum',

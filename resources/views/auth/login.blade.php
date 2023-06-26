@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            Login to Pizza HAP!
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -33,6 +33,7 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
+                <a class="text-red-600 text-sm me-auto underline" href="{{ url('/') }}">Back to Home</a>
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}

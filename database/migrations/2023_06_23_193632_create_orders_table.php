@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_user')->nullable();
+            $table->string('nama_user')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+
+            $table->bigInteger('id_menu')->nullable();
+            $table->string('nama_menu')->nullable();
+            $table->integer('kuantitas')->nullable();
+            $table->integer('harga')->nullable();
+            $table->string('delivery_status')->nullable()->default('processing');
             $table->timestamps();
         });
     }

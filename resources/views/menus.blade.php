@@ -4,6 +4,7 @@
     {{-- navbar --}}
     @include('parts.navbar')
     {{-- end of navbar --}}
+    
 
     {{-- START OF MENUS --}}
     <section class="py-5">
@@ -28,7 +29,7 @@
                                     @csrf
                                     <!-- Input Quantity-->
                                     <div class="input-group mt-3">
-                                        <input type="number" min="0" class="form-control" id="quantity" name="quantity" placeholder="Quantity">
+                                        <input type="number" min="1" class="form-control" id="quantity" name="quantity" placeholder="Quantity" value="1">
                                     </div>
                                     <!-- Product actions-->
                                     <div class="text-center mt-3">

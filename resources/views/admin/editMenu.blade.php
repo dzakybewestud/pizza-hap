@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Menu Table</h1>
+    <h1 class="mt-4">Menu Data</h1>
 
     {{-- start edit menu --}}
     <div class="card mb-4">

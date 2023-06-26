@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -68,6 +69,32 @@ class AdminController extends Controller
         return view('admin.adminUser', compact('users'));
     }
 
+    public function edit_user($id){
+        $user = User::find($id);
+
+        return view('admin.editUser', compact('user'));
+    }
+
+    public function edit_user_confirm(Request $request, $id){
+        $user = User::find($id);
+
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+
+
+        $user->save();
+        if($user->usertype == '2'){
+            return redirect('/admin-driver')->with('status', 'Berhasil Melakukan Update Driver');
+        } else {
+            return redirect('/admin-user')->with('status', 'Berhasil Melakukan Update User');
+        }
+
+
+    }
+
     public function delete_user($id){
         $data = User::where('id', $id);
         $data->delete();
@@ -81,10 +108,26 @@ class AdminController extends Controller
         return view('admin.adminDriver', compact('users'));
     }
 
+    public function edit_driver($id){
+        $user = User::find($id);
+
+        return view('admin.editDriver', compact('user'));
+    }
+
     public function delete_driver($id){
         $data = User::where('id', $id, 'usertype', 2);
         $data->delete();
 
         return redirect()->back()->with('status', 'Berhasil Menghapus Driver');
+    }
+
+    public function view_adminOrder(){
+        $orders = Order::all();
+        return view('admin.adminOrder', compact('orders'));
+    }
+
+    public function view_adminHome(){
+        $orders = Order::all();
+        return view('admin.adminHome', compact('orders'));
     }
 }

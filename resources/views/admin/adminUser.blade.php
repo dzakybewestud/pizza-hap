@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('content')
     <div class="container-fluid px-4">
-        <h1 class="mt-4">User Table</h1>
+        <h1 class="mt-4">User</h1>
 
         {{-- start add menu --}}
         <div class="card mb-4">
@@ -30,7 +30,7 @@
                             <td>{{ $user->phone }}</td>
                             <td>{{ $user->address }}</td>
                             <td colspan="2">
-                                <a class="btn btn-primary" href="">Edit</a>
+                                <a class="btn btn-primary" href="{{ url('edit_user', $user->id) }}">Edit</a>
                                 <a onclick="return confirm('Are you sure to delete {{ $user->name }}')" class="btn btn-danger" href="{{ url('delete_user', $user->id) }}">Delete</a>
                             </td>
                         </tr>

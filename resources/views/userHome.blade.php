@@ -3,6 +3,7 @@
 @section('content')
     {{-- navbar --}}
     @include('parts.navbar')
+    
     {{-- end of navbar --}}
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">

@@ -4,11 +4,17 @@
 @section('content')
     <div class="container h-100">
         @if (session()->has('status'))
-                    <div class="alert alert-success">
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
-                        {{ session()->get('status') }}
-                    </div>
-                @endif
+            <div class="alert alert-success">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
+                {{ session()->get('status') }}
+            </div>
+        @endif
+        @if (session()->has('alert'))
+            <div class="alert alert-danger">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
+                {{ session()->get('alert') }}
+            </div>
+        @endif
         <div class="row d-flex justify-content-center h-100 mt-5">
             <div class="col">
                 <div class="table-responsive">
@@ -24,16 +30,18 @@
                         <tbody>
                             <?php $totalHarga = 0; ?>
                             @foreach ($cart as $cart)
-                            <tr>
-                                <td>{{ $cart->nama_menu }}</td>
-                                <td>{{ $cart->kuantitas }}</td>
-                                <td>Rp {{ $cart->harga }}</td>
-                                <td colspan="2">
-                                    <a class="btn btn-sm btn-primary" href="">Edit</a>
-                                    <a class="btn btn-sm btn-danger" onclick="return confirm('Apakah yakin menghapus menu dari cart?')" href="{{ url('delete_cart', $cart->id) }}">Delete</a>
-                                </td>
-                            </tr>
-                            <?php $totalHarga = $totalHarga + $cart->harga ?>
+                                <tr>
+                                    <td>{{ $cart->nama_menu }}</td>
+                                    <td>{{ $cart->kuantitas }}</td>
+                                    <td>Rp {{ $cart->harga }}</td>
+                                    <td colspan="2">
+                                        <a class="btn btn-sm btn-primary" href="">Edit</a>
+                                        <a class="btn btn-sm btn-danger"
+                                            onclick="return confirm('Apakah yakin menghapus menu dari cart?')"
+                                            href="{{ url('delete_cart', $cart->id) }}">Delete</a>
+                                    </td>
+                                </tr>
+                                <?php $totalHarga = $totalHarga + $cart->harga; ?>
                             @endforeach
                         </tbody>
                     </table>
@@ -63,24 +71,24 @@
                             </div>
                             <div class="col-md-6 col-lg-4 col-xl-5">
 
-                                    <div class="col-12 col-lg-12">
-                                        <div class="rounded border w-100 p-2 m-2">
-                                            <p class="d-flex align-items-center mb-0">{{ $cart->nama_user }}
-                                            </p>
-                                        </div>
+                                <div class="col-12 col-lg-12">
+                                    <div class="rounded border w-100 p-2 m-2">
+                                        <p class="d-flex align-items-center mb-0">{{ $user->name }}
+                                        </p>
                                     </div>
-                                    <div class="col-12 col-lg-5.5">
-                                        <div class="rounded border w-100 p-2 m-2">
-                                            <p class="d-flex align-items-center mb-0">{{ $cart->address }}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="col-12 col-lg-5.5">
+                                    <div class="rounded border w-100 p-2 m-2">
+                                        <p class="d-flex align-items-center mb-0">{{ $user->address }}
+                                        </p>
                                     </div>
-                                    <div class="col-12 col-xl-12">
-                                        <div class="rounded border w-100 p-2 m-2">
-                                            <p class="d-flex align-items-center mb-0">{{ $cart->phone }}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="col-12 col-xl-12">
+                                    <div class="rounded border w-100 p-2 m-2">
+                                        <p class="d-flex align-items-center mb-0">{{ $user->phone }}
+                                        </p>
                                     </div>
+                                </div>
 
                             </div>
                             <div class="col-lg-4 col-xl-4">
@@ -91,12 +99,10 @@
                                 <hr class="my-3">
 
 
-                                <button type="button" class="btn btn-danger btn-block btn-lg"
+                                <a href="{{ url('checkout_cart') }}" class="btn btn-danger btn-block btn-lg"
                                     style="text-align: right;">
-                                    <div class="d-flex justify-content-end" style="font: 500">
-                                        <span>Checkout</span>
-                                    </div>
-                                </button>
+                                    Checkout
+                                </a>
                             </div>
                         </div>
                     </div>
