@@ -21,12 +21,15 @@ class HomeController extends Controller
 
     public function redirect()
     {
-        $usertype = Auth::user()->usertype;
-
-        if ($usertype == '1') {
-            return app('App\Http\Controllers\AdminController')->view_adminHome();
-        } elseif ($usertype == '2') {
-            return app('App\Http\Controllers\DriverController')->driver_home();
+        if (!empty(Auth::user()->usertype)) {
+            $usertype = Auth::user()->usertype;
+            if ($usertype == '1') {
+                return app('App\Http\Controllers\AdminController')->view_adminHome();
+            } elseif ($usertype == '2') {
+                return app('App\Http\Controllers\DriverController')->driver_home();
+            } else {
+                return view('userHome');
+            }
         } else {
             return view('userHome');
         }
