@@ -1,66 +1,42 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="public/assets/img/Pizza.png" alt="Pizza" />
 </p>
 
-## About Laravel
+## Final Project Pemograman Web C
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Deskripsi Website :
+"Pizza Hap!" adalah sebuah website yang menghadirkan pengalaman pesan dan antar pizza secara online. Dengan menggunakan platform ini, pengguna dapat dengan mudah menjelajahi menu yang beragam dan memesan pizza favorit mereka dengan beberapa klik. Secara keseluruhan, "Pizza Hap!" adalah sebuah website yang memberikan pengalaman pesan dan antar pizza yang praktis, cepat, dan memuaskan. Dengan tampilan yang menarik, navigasi yang mudah, dan pilihan pizza yang melimpah, website ini menjadi destinasi utama bagi para pecinta pizza yang ingin menikmati hidangan lezat dengan mudah melalui platform online.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Anggota Kelompok :
+- *Dzaky Ahmadin Berkah Wardana (215150200111032)*
+- *Prima Daffa Al Kautsar (215150207111076)*
+- *Depiero M Algifari (215150200111036)*
 
-## Learning Laravel
+### Fitur CRUD
+Pada website Pizza Hap! kami melakukan pengimplementasian sistem CRUD yang kuat untuk mengelola pesanan pizza pengguna. Berikut adalah penjelasan tentang masing-masing aspek CRUD dalam website ini:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- *Create*: Pengguna dapat dengan mudah membuat pesanan pizza baru dengan memilih dari berbagai pilihan menu. Setelah pesanan dibuat, pesanan tersebut ditambahkan ke keranjang untuk proses lebih lanjut.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- *Read*: Website ini memberikan informasi kepada pengguna tentang menu pizza yang tersedia. Pengguna dapat melihat jumlah menu yang dipesan melalui keranjang belanja serta terdapat rincian total harga.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- *Update*: Pengguna memiliki fleksibilitas untuk memperbarui pesanan yang ada. Mereka dapat mengubah adonan, topping, ukuran, atau jumlah pizza sebelum mengirimkan pesanan. Selain itu, pengguna dapat memperbarui profil pribadi mereka, termasuk alamat pengiriman dan preferensi lainnya.
 
-## Laravel Sponsors
+- *Delete*: Pengguna dapat menghapus pesanan yang tidak diinginkan atau tidak relevan dari keranjang mereka sebelum memfinalisasi pesanan. Mereka dapat dengan mudah membatalkan pesanan yang tidak lagi diperlukan. Jika pengguna ingin menghapus akun mereka sepenuhnya, mereka memiliki opsi untuk menghapus profil pribadi mereka dari sistem.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#### Cara Menjalankan
 
-### Premium Partners
+Untuk menjalankan aplikasi web Pizza Hap! secara lokal, ikuti langkah-langkah berikut:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+1. Clone repositori ke mesin lokal Anda.
+2. Buka direktori proyek.
+3. Install dependensi yang diperlukan dengan menjalankan `npm install` di terminal.
+4. Mulai server pengembangan dengan `npm start`.
+5. Akses aplikasi di web browser Anda melalui `http://localhost:3000`.
 
-## Contributing
+#### Teknologi yang Digunakan
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- HTML5
+- CSS3
+- Node.js
+- phpmyadmin
