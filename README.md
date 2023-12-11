@@ -32,11 +32,11 @@ Untuk menjalankan aplikasi web Pizza Hap! secara lokal, ikuti langkah-langkah be
 2. Buka direktori proyek.
 3. Install dependensi yang diperlukan dengan menjalankan `npm install` di terminal.
 4. Mulai server pengembangan dengan `npm start`.
-5. Akses aplikasi di web browser Anda melalui `http://localhost:3000`.
+5. Akses aplikasi di web browser Anda melalui terminal.
 
 #### Teknologi yang Digunakan
 
 - HTML5
 - CSS3
-- Node.js
-- phpmyadmin
+- Laravel
+- Xampp
